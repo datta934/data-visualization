@@ -1,0 +1,23 @@
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-no-underline {
+  text-decoration: none;
+}
+
+.section-img {
+  width: 400px;
+}
+.coffee-symbol {
+  color: chocolate;
+}
+.steps-symbol {
+  transform: rotate(-90deg);
+  color: brown;
+}
+
+.symbol-size{
+    font-size: 1.25rem;
+}
