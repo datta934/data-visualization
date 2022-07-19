@@ -25,3 +25,7 @@
 main{
   text-align: center;
 }
+
+.cursor-not{
+  cursor: not-allowed;
+}
