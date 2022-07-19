@@ -17,16 +17,12 @@
 </head>
 
 <body>
-    <div class="container px-4 py-5" id="custom-cards">
+    <div class="container-fluid py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">Talking to my alien friend</h2>
-        <div class="row py-4">
-            <div class="section-img col-2">
-                <img src="./../assets/images/alien.jpg" class="img-thumbnail" alt="Alien Friend">
-            </div>
+        <div class="row py-4 text-center">
             <div class="col">
-                <p class="fs-4">My alien friend understands:</p>
                 <div class="pt-3">Numbers:</div>
-                <div class="row text-center py-3 fs-5">
+                <div class="row text-center py-3 fs-5 px-2">
                     <div class="col"><i class="fa-solid fa-0"></i></div>
                     <div class="col"><i class="fa-solid fa-1"></i></div>
                     <div class="col"><i class="fa-solid fa-2"></i></div>
@@ -38,9 +34,14 @@
                     <div class="col"><i class="fa-solid fa-8"></i></div>
                     <div class="col"><i class="fa-solid fa-9"></i></div>
                 </div>
+            </div>
+            <div class="section-img col">
+                <img src="./../assets/images/alien.jpg" class="img-thumbnail" alt="Alien Friend">
+            </div>
+            <div class="col">
 
                 <div class="pt-3">Ratings:</div>
-                <div class="row text-center py-3 fs-5">
+                <div class="row text-center py-3 fs-5 px-2">
                     <div class="col">
                         <div><i class="fa-solid fa-circle text-danger"></i></div>
                         <div>Worst</div>
@@ -65,7 +66,7 @@
             </div>
         </div>
         <div class="row justify-content-between">
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 <table class="table table-responsive text-center fs-5">
                     <thead>
                         <tr>
@@ -77,24 +78,24 @@
                     <tbody>
                         <tr>
                             <td>Water</td>
-                            <td><i class="fa-solid fa-glass-water text-info"></i></td>
+                            <td><i class="fa-solid fa-glass-water text-secondary"></i></td>
                             <td><i class="fa-solid fa-8"></i></td>
                         </tr>
                         <tr>
                             <td>Coffee</td>
-                            <td><i class="fa-solid fa-mug-saucer coffee-symbol"></i></td>
+                            <td><i class="fa-solid fa-mug-saucer text-secondary"></i></td>
                             <td><i class="fa-solid fa-2"></i></td>
                         </tr>
                         <tr>
                             <td>Steps</td>
-                            <td><i class="fa-solid fa-shoe-prints steps-symbol"></i></td>
+                            <td><i class="fa-solid fa-shoe-prints text-secondary"></i></td>
                             <td><i class="fa-solid fa-1"></i><i class="fa-solid fa-0"></i><i
                                     class="fa-solid fa-0"></i><i class="fa-solid fa-0"></i></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4">
                 <table class="table table-responsive text-center fs-5">
                     <thead>
                         <tr>
@@ -106,12 +107,12 @@
                     <tbody>
                         <tr>
                             <td>Health</td>
-                            <td><i class="fa-solid fa-heart-pulse text-danger"></i></td>
+                            <td><i class="fa-solid fa-heart-pulse text-secondary"></i></td>
                             <td><i class="fa-solid fa-circle text-info"></i></td>
                         </tr>
                         <tr>
                             <td>Mood</td>
-                            <td><i class="fa-solid fa-face-smile text-warning"></i></td>
+                            <td><i class="fa-solid fa-face-smile text-secondary"></i></td>
                             <td><i class="fa-solid fa-circle text-success"></i></td>
                         </tr>
                         <tr>
