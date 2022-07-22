@@ -1,0 +1,281 @@
+[
+    {
+        "MovieName": "Aap Mujhe Achche Lagne Lage",
+        "Genre": "action",
+        "Profit": 1,
+        "IMDB": 3.1,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Agneepath",
+        "Genre": "action",
+        "Profit": 2.737007042,
+        "IMDB": 6.9,
+        "Remake": true,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Bang Bang",
+        "Genre": "action",
+        "Profit": 1.691820313,
+        "IMDB": 5.6,
+        "Remake": true,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Dhoom 2",
+        "Genre": "action",
+        "Profit": 3.6045,
+        "IMDB": 6.5,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Don 2",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": 7,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Fiza",
+        "Genre": "drama",
+        "Profit": 0,
+        "IMDB": 6,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Guzaarish",
+        "Genre": "drama",
+        "Profit": 0.7418175676,
+        "IMDB": 7.5,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Hey Bro",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": 2.7,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Hrudayantar",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": 8.4,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "I see you!",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": "4.3",
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Jodhaa Akbar",
+        "Genre": "love_story",
+        "Profit": 1.959668182,
+        "IMDB": 7.6,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Kaabil",
+        "Genre": "thriller",
+        "Profit": 1.73611236,
+        "IMDB": 7.1,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Kabhi Khushi Kabhie Gham",
+        "Genre": "drama",
+        "Profit": 0,
+        "IMDB": 7.4,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Kaho Naa Pyaar Hai",
+        "Genre": "love_story",
+        "Profit": 1,
+        "IMDB": 6.9,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Kites",
+        "Genre": "thriller",
+        "Profit": 1.052829268,
+        "IMDB": 6.1,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Koi Mil Gaya",
+        "Genre": "action",
+        "Profit": 1,
+        "IMDB": 7.1,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Krazzy 4",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": 4.2,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Krrish",
+        "Genre": "action",
+        "Profit": 3.16396875,
+        "IMDB": 6.4,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Krrish 3",
+        "Genre": "action",
+        "Profit": 3.068673684,
+        "IMDB": 5.2,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Lakshya",
+        "Genre": "action",
+        "Profit": 1,
+        "IMDB": 7.9,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Luck By Chance",
+        "Genre": "drama",
+        "Profit": 0,
+        "IMDB": 7.1,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Main Prem Ki Diwani Hoon",
+        "Genre": "drama",
+        "Profit": 1,
+        "IMDB": 4,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Mission Kashmir",
+        "Genre": "action",
+        "Profit": 0,
+        "IMDB": 6.6,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Mohenjo Daro",
+        "Genre": "drama",
+        "Profit": 0.7541666667,
+        "IMDB": 5.7,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Mujhse Dosti Karoge",
+        "Genre": "drama",
+        "Profit": 1,
+        "IMDB": 5.1,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Na Tum Jaano Na Hum",
+        "Genre": "drama",
+        "Profit": 0,
+        "IMDB": 4.9,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Om Shanti Om",
+        "Genre": "special",
+        "Profit": 0,
+        "IMDB": 6.7,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Super 30",
+        "Genre": "biography",
+        "Profit": 1,
+        "IMDB": 8,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "War",
+        "Genre": "action",
+        "Profit": 1,
+        "IMDB": 6.5,
+        "Remake": false,
+        "Franchise": true,
+        "Release": "holiday"
+    },
+    {
+        "MovieName": "Yaadein",
+        "Genre": "drama",
+        "Profit": 1,
+        "IMDB": 4.4,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    },
+    {
+        "MovieName": "Zindagi Na Milegi Dobara",
+        "Genre": "drama",
+        "Profit": 2.552683333,
+        "IMDB": 8.2,
+        "Remake": false,
+        "Franchise": false,
+        "Release": "normal"
+    }
+]

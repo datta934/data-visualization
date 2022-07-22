@@ -1,0 +1,186 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Data Visualization">
+    <meta name="author" content="Mauaa Datta">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Data Visualization</title>
+    <style>
+        .legend {
+            display: block;
+            shape-rendering: crispEdges;
+            width: calc(100% + 28px);
+            height: 33px;
+            margin: 0 -14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <h3 class="text-center py-4">Hrithik Roshan's filmography - with d3js</h3>
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <div id="chart">
+
+                </div>
+            </div>
+            <div class="col-12 col-md-3 px-3">
+                <h5>Legends</h5>
+                <div class="row col-12">
+                    <div class="col-6">Action</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#6baed6"></div>
+                        <div class="flex-fill" style="background-color: #3182bd"></div>
+                        <div class="flex-fill" style="background-color: #08519c"></div>
+                    </div>
+                </div>
+                <div class="row col-12 py-1">
+                    <div class="col-6">Biography</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#969696"></div>
+                        <div class="flex-fill" style="background-color: #636363"></div>
+                        <div class="flex-fill" style="background-color:#252525"></div>
+                    </div>
+                </div>
+                <div class="row col-12 py-1">
+                    <div class="col-6">Drama</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#74c476"></div>
+                        <div class="flex-fill" style="background-color: #31a354"></div>
+                        <div class="flex-fill" style="background-color:#006d2c"></div>
+                    </div>
+                </div>
+                <div class="row col-12 py-1">
+                    <div class="col-6">Love Story</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#fb6a4a"></div>
+                        <div class="flex-fill" style="background-color: #de2d26"></div>
+                        <div class="flex-fill" style="background-color:#a50f15"></div>
+                    </div>
+                </div>
+                <div class="row col-12 py-1">
+                    <div class="col-6">Special Appearance</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#6e40aa"></div>
+                        <div class="flex-fill" style="background-color: #fe4b83"></div>
+                        <div class="flex-fill" style="background-color:#e2b72f"></div>
+                    </div>
+                </div>
+                <div class="row col-12 py-1">
+                    <div class="col-6">Thriller</div>
+                    <div class="col d-flex">
+                        <div class="flex-fill" style="background:#fd8d3c"></div>
+                        <div class="flex-fill" style="background-color: #e6550d"></div>
+                        <div class="flex-fill" style="background-color:#a63603"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script type="text/javascript">
+        var dataset;
+
+        d3.json("data-bubble-chart.json", function (d) {
+            dataset = d;
+            console.log(dataset.children.length)
+
+            var diameter = 900;
+            var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+            var bubble = d3.pack(dataset)
+                .size([diameter, diameter])
+                .padding(1.5);
+
+            var svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", diameter)
+                .attr("height", diameter)
+                .attr("class", "bubble");
+
+            var nodes = d3.hierarchy(dataset)
+                .sum(function (d) { return d.IMDB; });
+
+            var node = svg.selectAll(".node")
+                .data(bubble(nodes).descendants())
+                .enter()
+                .filter(function (d) {
+                    return !d.children
+                })
+                .append("g")
+                .attr("class", "node")
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+            node.append("title")
+                .text(function (d) {
+                    return d.data.MovieName + ": " + d.data.IMDB;
+                });
+
+            node.append("circle")
+                .attr("r", function (d) {
+                    return d.r;
+                })
+                .style("fill", function (d) {
+                    let items = [];
+                    switch (d.data.Genre) {
+                        case "action":
+                            items = ["#6baed6", "#3182bd", "#08519c"];
+                            break;
+                        case "drama":
+                            items = ["#74c476", "#31a354", "#006d2c"];
+                            break;
+                        case "love_story":
+                            items = ["#fb6a4a", "#de2d26", "#a50f15"];
+                            break;
+                        case "thriller":
+                            items = ["#fd8d3c", "#e6550d", "#a63603"];
+                            break;
+                        case "biography":
+                            items = ["#969696", "#636363", "#252525"];
+                            break;
+                        default: items = ["#6e40aa", "#fe4b83", "#e2b72f"]
+                    }
+                    return items[Math.floor(Math.random() * items.length)];
+                });
+
+            node.append("text")
+                .attr("dy", ".1em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    return d.data.MovieName;
+                })
+                .attr("font-family", "sans-serif")
+                .attr("font-size", function (d) {
+                    return d.r / 5;
+                })
+                .attr("fill", "white");
+
+            node.append("text")
+                .attr("dy", "1.3em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    return d.data.IMDB;
+                })
+                .attr("font-family", "Gill Sans", "Gill Sans MT")
+                .attr("font-size", function (d) {
+                    return d.r / 5;
+                })
+                .attr("fill", "white");
+
+            d3.select(self.frameElement)
+                .style("height", diameter + "px");
+
+        });
+
+    </script>
