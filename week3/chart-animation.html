@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Data Visualization">
+    <meta name="author" content="Mauaa Datta">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Data Visualization</title>
+
+</head>
+
+<div class="container">
+    <div class="text-center">
+        <h4>Movie Titles starting with </h5>
+            <p>A to Z, Numbers and Characters</p>
+            <small>Years: 1931-2021</small>
+    </div>
+
+
+    <div class="row">
+        <div id="chart" class="col-11">
+
+        </div>
+        <div class="col-1 text-center text-white">
+            <div>
+                <div class="col-9 mx-auto py-1 my-1" style="background:#6fa8ab">
+                    &lt; 100</div>
+                <div class="col-9 mx-auto py-1 my-1" style="background:#5a9295">
+                    &lt; 200</div>
+                <div class="col-9 mx-auto py-1 my-1" style="background:#457d80">
+                    &lt; 300</div>
+                <div class="col-9 mx-auto py-1 my-1" style="background:#31686b">
+                    &lt; 400</div>
+                <div class="col-9 mx-auto py-1 my-1" style="background:#1b5457">
+                    &lt; 500</div>
+                <div class="col-9 mx-auto py-1 my-1 " style="background:#004144">&gt; 500</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+</div>
+
+<script>
+    budgetValues = [];
+    let t = 0;
+    function setup() {
+        var myCanvas = createCanvas(1200, 900);
+        myCanvas.parent("chart");
+        textAlign(CENTER)
+    }
+    function easeOutQuart(x) {
+        return 1 - pow(1 - x, 4);
+    }
+    let data = [
+        {
+            "Character": "?.@#",
+            "Count": 6
+        },
+        {
+            "Character": "Nos.",
+            "Count": 72
+        },
+        {
+            "Character": "A",
+            "Count": 513
+        },
+        {
+            "Character": "B",
+            "Count": 409
+        },
+        {
+            "Character": "C",
+            "Count": 229
+        },
+        {
+            "Character": "D",
+            "Count": 385
+        },
+        {
+            "Character": "E",
+            "Count": 98
+        },
+        {
+            "Character": "F",
+            "Count": 87
+        },
+        {
+            "Character": "G",
+            "Count": 204
+        },
+        {
+            "Character": "H",
+            "Count": 248
+        },
+        {
+            "Character": "I",
+            "Count": 117
+        },
+        {
+            "Character": "J",
+            "Count": 232
+        },
+        {
+            "Character": "K",
+            "Count": 403
+        },
+        {
+            "Character": "L",
+            "Count": 174
+        },
+        {
+            "Character": "M",
+            "Count": 453
+        },
+        {
+            "Character": "N",
+            "Count": 153
+        },
+        {
+            "Character": "O",
+            "Count": 47
+        },
+        {
+            "Character": "P",
+            "Count": 318
+        },
+        {
+            "Character": "Q",
+            "Count": 15
+        },
+        {
+            "Character": "R",
+            "Count": 245
+        },
+        {
+            "Character": "S",
+            "Count": 531
+        },
+        {
+            "Character": "T",
+            "Count": 368
+        },
+        {
+            "Character": "U",
+            "Count": 52
+        },
+        {
+            "Character": "V",
+            "Count": 79
+        },
+        {
+            "Character": "W",
+            "Count": 74
+        },
+        {
+            "Character": "X",
+            "Count": 3
+        },
+        {
+            "Character": "Y",
+            "Count": 80
+        },
+        {
+            "Character": "Z",
+            "Count": 64
+        }
+    ]
+
+    function draw() {
+        let animationProgress = easeOutQuart(map(frameCount, 0, 300, 0, 1, true))
+        background("255, 255, 255")
+        textSize(20);
+        textStyle(BOLD);
+        textSize(12)
+        push()
+        translate(0, 10);
+        data.forEach((el, i) => {
+            push()
+            translate(i * 10, 0)
+            switch (true) {
+                case (el.Count < 100): fill("#6fa8ab"); break;
+                case (el.Count >= 100 && el.Count < 200): fill("#5a9295"); break;
+                case (el.Count >= 200 && el.Count < 300): fill("#457d80"); break;
+                case (el.Count >= 300 && el.Count < 400): fill("#31686b"); break;
+                case (el.Count >= 400 && el.Count < 500): fill("#1b5457"); break;
+                case (el.Count >= 500): fill("#004144"); break;
+            }
+            noStroke()
+            rect(i * 30 + 30, 35, 30, data[i].Count * animationProgress);
+            if (el.Count < 40) {
+                fill("#000");
+                text(el.Count, i * 30 + 45, data[i].Count + 45)
+            } else {
+                fill("#fff")
+                push()
+                text(el.Count, i * 30 + 45, data[i].Count + 30)
+                pop()
+            }
+
+            push()
+            fill("#004144")
+            textStyle(BOLDITALIC);
+            text(el.Character, i * 30 + 45, 10);
+            pop()
+            pop()
+        })
+        pop()
+        if (t < 20) {
+            t = t + 0.1;
+        }
+    }
+</script>
+
+</html>
