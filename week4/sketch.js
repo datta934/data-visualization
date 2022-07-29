@@ -53,6 +53,8 @@ function setup() {
     data = mainData.list.filter((element) => {
         if (element.dt_txt.includes("06:00:00")) {
             return element;
+        } else if (element.dt_txt.includes("09:00:00")) {
+            return element;
         }
     });
 
